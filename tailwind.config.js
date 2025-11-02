@@ -31,9 +31,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  content: [
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       colors: {
@@ -41,6 +39,11 @@ module.exports = {
           DEFAULT: '#7C3AED',
           light: '#C4B5FD',
           dark: '#4C1D95',
+        },
+        secondary: {
+          DEFAULT: '#A78BFA', // Soft Light Purple (lighter than primary)
+          light: '#DDD6FE', // Very light accent
+          dark: '#6D28D9', // Slightly darker tone for contrast
         },
         background: {
           light: '#FFFFFF',

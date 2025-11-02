@@ -2,13 +2,13 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import avartar from '../../public/avartar.png'
+import avartar from '../../public/avartar01.jpg'
 
 export default function HeroSection() {
   return (
     <section
       id='home'
-      className='relative overflow-hidden min-h-screen flex flex-col md:flex-row justify-center items-center gap-10 py-24 px-6 md:px-16 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 transition-colors duration-500'
+      className='relative overflow-hidden min-h-screen flex flex-col md:flex-row justify-center items-center gap-10 py-20 px-6 md:px-16 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 transition-colors duration-500'
     >
       {/* 🌈 Animated Gradient Glow Background */}
       <motion.div
@@ -22,7 +22,8 @@ export default function HeroSection() {
         }}
         className='absolute inset-0 -z-10'
       >
-        <div className='absolute top-1/2 left-1/2 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px] opacity-40 bg-gradient-to-r from-primary via-purple-400 to-indigo-500 dark:from-primary-light dark:via-purple-500 dark:to-pink-500 animate-pulse' />
+        {/* <div className='absolute top-1/2 left-1/2 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px] opacity-40 bg-gradient-to-r from-primary via-purple-400 to-indigo-500 dark:from-primary-light dark:via-purple-500 dark:to-pink-500 animate-pulse' /> */}
+        <div className='absolute top-1/2 left-1/2 w-[900px] h-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[100px] opacity-70 bg-gradient-to-r from-primary to-secondary dark:opacity-20 dark:from-primary-light dark:via-purple-700 dark:to-pink-500 animate-pulse' />
       </motion.div>
 
       {/* LEFT TEXT SECTION */}
@@ -32,7 +33,7 @@ export default function HeroSection() {
         transition={{ duration: 0.8, ease: 'easeOut' }}
         className='text-center md:text-left max-w-lg z-10'
       >
-        <h1 className='text-4xl md:text-6xl font-bold font-poppins text-primary mb-4'>
+        <h1 className='text-4xl md:text-6xl font-bold font-poppins text-secondary mb-4'>
           Crafting Visual Magic 🎨
         </h1>
         <p className='text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6'>
@@ -47,8 +48,9 @@ export default function HeroSection() {
             View Portfolio
           </a>
           <a
-            href='#contact'
+            href='https://wa.link/2rclc1'
             className='px-6 py-3 border-2 border-primary text-primary dark:text-primary-light rounded-xl hover:bg-primary hover:text-white transition-colors duration-300'
+            target="_blank" rel="noopener noreferrer"
           >
             Contact Me
           </a>

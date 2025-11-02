@@ -54,12 +54,12 @@ export default function ContactSection() {
 
           <div className='flex items-center space-x-4'>
             <Mail className='w-6 h-6 text-primary' />
-            <span>hello@diwizestudio.com</span>
+            <span>diwizestudio001@gmail.com</span>
           </div>
 
           <div className='flex items-center space-x-4'>
             <Phone className='w-6 h-6 text-primary' />
-            <span>+234 800 123 4567</span>
+            <span>+234 812 7487 723</span>
           </div>
 
           {/* SOCIAL ICONS */}
