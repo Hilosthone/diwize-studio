@@ -6,11 +6,17 @@ import AboutSection from './components/AboutSection'
 import PortfolioSection from './components/PortfolioSection'
 import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
+import type { Metadata } from 'next'
 
-export const metadata = {
-  title: 'Diwize Studio',
-  description: 'Creative design and web solutions by Diwize Studio',
+export const metadata: Metadata = {
+  title: 'Diwize Studio 🎨',  
+  description:
+    'Crafting visuals, brands, and digital experiences that shine ✨',
+  icons: {
+    icon: '/avartar01.jpg',
+  },
 }
+
 
 export default function RootLayout({
   children,

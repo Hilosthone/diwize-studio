@@ -84,17 +84,30 @@ export default function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           className='md:hidden bg-white dark:bg-[#0F0F0F] shadow-md px-6 py-4 space-y-3'
         >
-          {navLinks.map((link) => (
+          {/* {navLinks.map((link) => (
             <li key={link.name}>
               <a
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className='block text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary-light transition-colors duration-300'
+                className='block text-gray-700 items-center dark:text-gray-200 hover:text-primary dark:hover:text-primary-light transition-colors duration-300'
               >
                 {link.name}
               </a>
             </li>
-          ))}
+          ))} */}
+          <ul className="flex flex-col items-center justify-center gap-6 md:flex-row">
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <a
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="block text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary-light transition-colors duration-300"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
         </motion.ul>
       )}
     </motion.nav>
