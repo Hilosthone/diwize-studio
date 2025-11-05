@@ -42,10 +42,11 @@ export default function HeroSection() {
         </p>
         <div className='flex flex-col sm:flex-row gap-4 justify-center md:justify-start'>
           <a
-            href='#portfolio'
+            href='https://docs.google.com/document/d/1LCajJ4ExGuLLnPEmzz-IY0lTP9Pz1Q5s2L8Y8R-IBk4/edit?tab=t.0'
             className='px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary-dark transition-colors duration-300 shadow-md hover:shadow-lg'
+            target="_blank" rel="noopener noreferrer"
           >
-            View Portfolio
+            View my Resume
           </a>
           <a
             href='https://wa.link/2rclc1'
