@@ -12,62 +12,72 @@ import project10 from '@/public/projects/project10.jpg'
 export const projects = [
   {
     id: 1,
-    title: 'Brand Identity Design',
+    title: 'Áfọ̀bájẹ́ Live Webinar Flyer',
     img: project1,
-    description: 'Modern logo and brand palette for a creative agency.',
+    description:
+      'An eye-catching promotional flyer design for the Áfọ̀bájẹ́ live webinar event.',
   },
   {
     id: 2,
-    title: 'UI/UX Web Design',
+    title: 'Proffyemphy Tutorial Flyer',
     img: project2,
-    description: 'Clean responsive website interface for a tech startup.',
+    description:
+      'A sleek and professional tutorial flyer created for Proffyemphy’s educational brand.',
   },
   {
     id: 3,
-    title: 'Product Packaging',
+    title: 'Redeemed Christian Church of God: Youth Breakfast Flyer',
     img: project3,
-    description: 'Minimal and elegant product label design for skincare.',
+    description:
+      'A vibrant and inviting flyer for the RCCG Youth Breakfast outreach program.',
   },
   {
     id: 4,
-    title: 'Illustration Concept',
+    title: 'FUTA Certificate Flyer',
     img: project4,
-    description: 'Digital art and storytelling through character illustration.',
+    description:
+      'A formal and well-structured flyer designed for FUTA’s certificate program.',
   },
   {
     id: 5,
-    title: 'Social Media Campaign',
+    title: 'Scrunchies Flyer',
     img: project5,
-    description: 'Creative visuals and brand storytelling for a fashion brand.',
+    description:
+      'A stylish and minimal flyer showcasing premium scrunchies products.',
   },
   {
     id: 6,
-    title: 'App UI Redesign',
+    title: 'Royal Ambassadors of Nigeria (Hebron Baptist Association) Flyer',
     img: project6,
-    description: 'A sleek and modern redesign for a mobile productivity app.',
+    description:
+      'A bold and inspiring flyer design promoting the Royal Ambassadors’ youth event.',
   },
   {
     id: 7,
-    title: 'E-commerce Branding',
+    title: 'Summer School Programme Flyer',
     img: project7,
-    description: 'Building a fresh identity and packaging for an online store.',
+    description:
+      'A bright and engaging flyer created to advertise a summer school programme.',
   },
   {
     id: 8,
-    title: 'Poster & Print Design',
+    title: 'Welcome to April Flyer',
     img: project8,
-    description: 'Typography-driven posters for music and cultural events.',
+    description:
+      'A cheerful, seasonal flyer welcoming the month of April with positivity.',
   },
   {
     id: 9,
-    title: 'Minimal Portfolio Website',
+    title: 'Clients Reviews Flyer',
     img: project9,
-    description: 'Elegant one-page portfolio with smooth scroll animations.',
+    description:
+      'A testimonial-style flyer designed to highlight client feedback and satisfaction.',
   },
   {
     id: 10,
-    title: '3D Logo Concept',
+    title: 'Swift Sneakers Flyer',
     img: project10,
-    description: 'High-definition 3D branding logo with lighting and depth.',
+    description:
+      'A dynamic and modern flyer created for the Swift Sneakers fashion brand.',
   },
 ]

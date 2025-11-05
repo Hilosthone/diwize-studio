@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import AboutSection from './components/AboutSection'
 import PortfolioSection from './components/PortfolioSection'
+import ServiceSection from './components/ServiceSection'
 import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 import type { Metadata } from 'next'
@@ -31,6 +32,7 @@ export default function RootLayout({
           <HeroSection />
           <AboutSection />
           <PortfolioSection />
+          <ServiceSection />
           <ContactSection />
           <Footer />
           {/* <main className='pt-20'>{children}</main> */}
