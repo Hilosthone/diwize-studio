@@ -1,23 +1,30 @@
-import './globals.css'
-import { ThemeProvider } from 'next-themes'
-import Navbar from './components/Navbar'
-import HeroSection from './components/HeroSection'
-import AboutSection from './components/AboutSection'
-import PortfolioSection from './components/PortfolioSection'
-import ServiceSection from './components/ServiceSection'
-import ContactSection from './components/ContactSection'
-import Footer from './components/Footer'
-import type { Metadata } from 'next'
+import { Metadata } from 'next'
+import ClientLayout from './ClientLayout'
 
 export const metadata: Metadata = {
-  title: 'Diwize Studio 🎨',  
-  description:
-    'Crafting visuals, brands, and digital experiences that shine ✨',
+  title: 'Diwize Studio | Premium Graphics Design',
+  description: 'Strategic visual storytelling and brand identity design.',
+  // This makes your avatar show up in the browser tab
   icons: {
     icon: '/avartar01.jpg',
+    apple: '/avartar01.jpg',
+  },
+  // This makes your avatar show up when pasting the link on Social Media
+  openGraph: {
+    title: 'Diwize Studio',
+    description: 'Elevating brands through strategic design.',
+    url: 'https://yourdomain.com',
+    images: [
+      {
+        url: '/avartar01.jpg',
+        width: 800,
+        height: 800,
+        alt: 'Diwize Studio Avatar',
+      },
+    ],
+    type: 'website',
   },
 }
-
 
 export default function RootLayout({
   children,
@@ -26,18 +33,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className='bg-background-light text-gray-900 dark:bg-background-dark dark:text-gray-100 transition-colors duration-500'>
-        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-          <Navbar />
-          <HeroSection />
-          <AboutSection />
-          <PortfolioSection />
-          <ServiceSection />
-          <ContactSection />
-          <Footer />
-          {/* <main className='pt-20'>{children}</main> */}
-        </ThemeProvider>
-      </body>
+      <ClientLayout>{children}</ClientLayout>
     </html>
   )
 }

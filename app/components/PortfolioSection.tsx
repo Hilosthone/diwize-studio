@@ -1,75 +1,6 @@
-// 'use client'
-
-// import { motion } from 'framer-motion'
-// import Image from 'next/image'
-// import { projects } from '../data/projectsData'
-
-// export default function PortfolioSection() {
-//   return (
-//     <section
-//       id='portfolio'
-//       className='min-h-screen py-24 px-6 md:px-16 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 transition-colors duration-500'
-//     >
-//       {/* HEADER */}
-//       <motion.div
-//         initial={{ opacity: 0, y: 40 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         transition={{ duration: 0.8, ease: 'easeOut' }}
-//         viewport={{ once: true }}
-//         className='text-center mb-16'
-//       >
-//         <h2 className='text-3xl md:text-5xl font-bold font-poppins text-primary mb-4'>
-//           My Works 🎨
-//         </h2>
-//         <p className='text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto'>
-//           A collection of my favorite design and branding projects — each one
-//           tells a story through creativity and precision.
-//         </p>
-//       </motion.div>
-
-//       {/* PROJECT GRID */}
-//       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto'>
-//         {projects.map((project) => (
-//           <motion.div
-//             key={project.id}
-//             initial={{ opacity: 0, y: 20 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.6, ease: 'easeOut' }}
-//             viewport={{ once: true }}
-//             whileHover={{ scale: 1.03 }}
-//             className='group rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-gray-900 transition-all duration-500 hover:shadow-2xl cursor-pointer'
-//           >
-//             {/* IMAGE */}
-//             <div className='relative w-full h-56 pt-3 overflow-hidden'>
-//               <Image
-//                 src={project.img}
-//                 alt={project.title}
-//                 fill
-//                 className='object-cover transition-transform duration-700 ease-out group-hover:scale-100 group-hover:brightness-90'
-//               />
-//               {/* Overlay */}
-//               <div className='absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500'></div>
-//             </div>
-
-//             {/* TEXT */}
-//             <div className='p-6 space-y-3'>
-//               <h3 className='text-xl font-semibold text-primary group-hover:text-secondary transition-colors duration-500'>
-//                 {project.title}
-//               </h3>
-//               <p className='text-gray-700 dark:text-gray-300'>
-//                 {project.description}
-//               </p>
-//             </div>
-//           </motion.div>
-//         ))}
-//       </div>
-//     </section>
-//   )
-// }
-
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { useState } from 'react'
 import { projects } from '../data/projectsData'
@@ -80,7 +11,7 @@ export default function PortfolioSection() {
   return (
     <section
       id='portfolio'
-      className='min-h-screen py-24 px-6 md:px-16 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 transition-colors duration-500'
+      className='min-h-screen py-24 px-6 md:px-16 bg-white dark:bg-[#080808] text-gray-900 dark:text-gray-100 transition-colors duration-500'
     >
       {/* HEADER */}
       <motion.div
@@ -90,17 +21,21 @@ export default function PortfolioSection() {
         viewport={{ once: true }}
         className='text-center mb-16'
       >
-        <h2 className='text-3xl md:text-5xl font-bold font-poppins text-primary mb-4'>
-          My Works 🎨
+        <h2 className='text-3xl md:text-5xl font-bold mb-4'>
+          My{' '}
+          <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-fuchsia-500 dark:from-purple-400 dark:to-pink-400'>
+            Works
+          </span>{' '}
+          🎨
         </h2>
-        <p className='text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto'>
+        <p className='text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed'>
           A collection of my favorite design and branding projects — each one
           tells a story through creativity and precision.
         </p>
       </motion.div>
 
       {/* PROJECT GRID */}
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto'>
         {projects.map((project) => (
           <motion.div
             key={project.id}
@@ -108,27 +43,37 @@ export default function PortfolioSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
             viewport={{ once: true }}
-            whileHover={{ scale: 1.03 }}
+            whileHover={{ y: -10 }}
             onClick={() => setSelectedImage(project.img.src)}
-            className='group relative rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-gray-900 transition-all duration-500 hover:shadow-2xl cursor-pointer'
+            className='group relative rounded-[2rem] overflow-hidden bg-gray-50 dark:bg-white/[0.03] border border-black/5 dark:border-white/10 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 cursor-pointer'
           >
-            {/* IMAGE */}
-            <div className='relative w-full h-80 pt-3 overflow-hidden'>
+            {/* IMAGE CONTAINER */}
+            <div className='relative w-full h-80 overflow-hidden'>
               <Image
                 src={project.img}
                 alt={project.title}
                 fill
-                className='object-cover transition-transform duration-700 ease-out group-hover:scale-105'
+                className='object-cover transition-transform duration-700 ease-out group-hover:scale-110'
               />
-              {/* GRADIENT OVERLAY */}
-              <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-100 group-hover:opacity-90 transition-opacity duration-500'></div>
 
-              {/* TEXT OVER IMAGE */}
-              <div className='absolute bottom-0 left-0 w-full p-6 text-white'>
-                <h3 className='text-xl font-semibold text-white'>
+              {/* VIBRANT PURPLE OVERLAY ON HOVER */}
+              <div className='absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8'>
+                <div className='translate-y-4 group-hover:translate-y-0 transition-transform duration-500'>
+                  <h3 className='text-2xl font-bold text-white mb-1'>
+                    {project.title}
+                  </h3>
+                  <p className='text-purple-200 text-sm font-medium'>
+                    {project.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* DEFAULT LIGHT TEXT SHADOW (Visible before hover) */}
+              <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:opacity-0 transition-opacity duration-500 pointer-events-none' />
+              <div className='absolute bottom-6 left-8 group-hover:opacity-0 transition-opacity duration-500'>
+                <h3 className='text-xl font-bold text-white'>
                   {project.title}
                 </h3>
-                <p className='text-sm opacity-90'>{project.description}</p>
               </div>
             </div>
           </motion.div>
@@ -136,27 +81,48 @@ export default function PortfolioSection() {
       </div>
 
       {/* LIGHTBOX (FULL IMAGE VIEW) */}
-      {selectedImage && (
-        <div
-          onClick={() => setSelectedImage(null)}
-          className='fixed inset-0 bg-black/80 flex items-center justify-center z-50 cursor-pointer'
-        >
+      <AnimatePresence>
+        {selectedImage && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.3 }}
-            className='relative w-[90vw] h-[80vh]'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className='fixed inset-0 bg-black/95 flex items-center justify-center z-[100] cursor-pointer p-4'
           >
-            <Image
-              src={selectedImage}
-              alt='Full project image'
-              fill
-              className='object-contain rounded-2xl'
-            />
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className='relative w-full max-w-5xl h-[80vh]'
+            >
+              <Image
+                src={selectedImage}
+                alt='Full project image'
+                fill
+                className='object-contain rounded-2xl'
+              />
+            </motion.div>
+
+            {/* CLOSE BUTTON */}
+            <button className='absolute top-10 right-10 text-white/50 hover:text-white transition-colors'>
+              <svg
+                className='w-8 h-8'
+                fill='none'
+                stroke='currentColor'
+                viewBox='0 0 24 24'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth='2'
+                  d='M6 18L18 6M6 6l12 12'
+                />
+              </svg>
+            </button>
           </motion.div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
     </section>
   )
 }
